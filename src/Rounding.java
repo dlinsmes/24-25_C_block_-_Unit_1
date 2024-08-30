@@ -115,5 +115,25 @@ public class Rounding {
         System.out.println(o + " $1 bills");
         amt = amt % 1;
 
+        //multiply the remaining cent amount by 100 to get an int and round, then use int div/mod
+        //easier and less tedious than rounding each coin quantity from a double
+
+        amt = amt * 100; //24.99999
+        int cents = (int)(amt + 0.5); //25
+
+        int q = cents/25;
+        System.out.println(q + " quarters");
+        cents = cents % 25;
+
+        int d = cents / 10;
+        System.out.println(d + " dimes");
+        cents = cents % 10;
+
+        int nick = cents / 5;
+        System.out.println(nick + " nickels");
+        cents = cents % 5;
+
+        System.out.println(cents + " pennies");
+
     }
 }
